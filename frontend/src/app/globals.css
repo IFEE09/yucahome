@@ -3,13 +3,13 @@
 :root {
   --background: #fafaf9;
   --surface: #ffffff;
-  --primary: #4f46e5;
-  --secondary: #92400e;
+  --primary: #15803d;
+  --secondary: #5D4037;
   --text-main: #1c1917;
-  --text-muted: #78716c;
+  --text-muted: #57534e;
   --foreground: var(--text-main);
   /* Components */
-  --border: rgba(79, 70, 229, 0.1);
+  --border: rgba(21, 128, 61, 0.1);
   --card: #ffffff;
 }
 
@@ -44,5 +44,5 @@ h6 {
 }
 
 .hero-gradient {
-  background: linear-gradient(135deg, #4f46e5 0%, #1c1917 100%);
+  background: linear-gradient(135deg, #15803d 0%, #1c1917 100%);
 }
