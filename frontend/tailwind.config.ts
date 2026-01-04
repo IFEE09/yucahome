@@ -13,7 +13,7 @@ const config: Config = {
                 background: "#fafaf9", // stone-50
                 surface: "#ffffff",    // white
                 primary: "#4f46e5",    // indigo-600
-                secondary: "#f97316",  // orange-500
+                secondary: "#92400e",  // warm brown/wood (mejor contraste)
                 textMain: "#1c1917",   // stone-900
                 textMuted: "#78716c",  // stone-500
             },
