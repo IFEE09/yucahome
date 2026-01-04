@@ -15,43 +15,6 @@ async function getProperties() {
 export default async function Home() {
   const properties = await getProperties();
 
-  // Fallback data if API fails during build/run
-  const displayProperties = properties.length > 0 ? properties : [
-    {
-      id: 1,
-      title: 'Casa Hacienda Itzimná',
-      price: 8450000,
-      currency: 'MXN',
-      type: 'Residencial',
-      location: 'Itzimná, Mérida',
-      specs: { beds: 3, baths: 4, size: 450 },
-      premium: true,
-      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop'
-    },
-    {
-      id: 2,
-      title: 'Loft Moderno Cabo Norte',
-      price: 3200000,
-      currency: 'MXN',
-      type: 'Departamento',
-      location: 'Cabo Norte, Mérida',
-      specs: { beds: 1, baths: 1.5, size: 120 },
-      premium: false,
-      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop'
-    },
-    {
-      id: 3,
-      title: 'Villa del Mar Telchac',
-      price: 12500000,
-      currency: 'MXN',
-      type: 'Costa',
-      location: 'Telchac Puerto',
-      specs: { beds: 5, baths: 5, size: 600 },
-      premium: true,
-      image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=2074&auto=format&fit=crop'
-    }
-  ];
-
   return (
     <main className="min-h-screen bg-background">
       {/* Navigation */}
@@ -172,11 +135,33 @@ export default async function Home() {
             <a href="#" className="text-secondary font-bold border-b-2 border-secondary pb-1 hover:text-primary hover:border-primary transition-all">Ver todas</a>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {displayProperties.map((prop: any) => (
-              <PropertyCard key={prop.id} property={prop} />
-            ))}
-          </div>
+          {properties.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {properties.map((prop: any) => (
+                <PropertyCard key={prop.id} property={prop} />
+              ))}
+            </div>
+          ) : (
+            <div className="flex flex-col items-center justify-center py-20 px-6">
+              <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-textMain mb-3">Próximamente Propiedades Exclusivas</h3>
+              <p className="text-textMuted text-center max-w-md mb-8">
+                Estamos trabajando con los mejores brokers de Yucatán para traerte las propiedades más exclusivas del estado.
+              </p>
+              <div className="flex gap-4">
+                <button className="bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary/90 transition-all">
+                  Notificarme cuando haya propiedades
+                </button>
+                <button className="border-2 border-primary text-primary px-6 py-3 rounded-full font-semibold hover:bg-primary/5 transition-all">
+                  Contactar Asesor
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
