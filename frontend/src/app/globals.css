@@ -5,14 +5,14 @@
   --background: #fafaf9;
   --surface: #ffffff;
 
-  /* Primary - Verde Árbol */
-  --primary: #15803d;
-  --primary-hover: #14532d;
+  /* Primary - Verde Lima */
+  --primary: #7CB342;
+  --primary-hover: #689F38;
   --primary-foreground: #ffffff;
 
-  /* Accent - Café Nogal */
-  --accent: #5D4037;
-  --accent-hover: #4E342E;
+  /* Accent - Café Terracota */
+  --accent: #954E28;
+  --accent-hover: #7A3F1F;
   --accent-foreground: #ffffff;
 
   /* Texto */
@@ -20,9 +20,9 @@
   --text-muted: #57534e;
 
   /* Alias para compatibilidad */
-  --secondary: #5D4037;
+  --secondary: #954E28;
   --foreground: var(--text-main);
-  --border: rgba(21, 128, 61, 0.1);
+  --border: rgba(124, 179, 66, 0.1);
   --card: #ffffff;
 }
 
@@ -33,6 +33,11 @@
   --color-surface: var(--surface);
   --color-textMain: var(--text-main);
   --color-textMuted: var(--text-muted);
+  --font-handwritten: var(--font-handwritten);
+}
+
+.font-handwritten {
+  font-family: var(--font-handwritten);
 }
 
 body {
@@ -57,5 +62,5 @@ h6 {
 }
 
 .hero-gradient {
-  background: linear-gradient(135deg, #15803d 0%, #1c1917 100%);
+  background: linear-gradient(135deg, #7CB342 0%, #1c1917 100%);
 }

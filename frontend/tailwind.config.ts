@@ -17,15 +17,15 @@ const config: Config = {
 
                 // Acción Principal (Botones, Links importantes)
                 primary: {
-                    DEFAULT: "#15803d", // Green 700 (Verde Árbol)
-                    hover: "#14532d",   // Green 900 (Un poco más oscuro para hover)
+                    DEFAULT: "#7CB342", // Verde Lima (brillante y amarillento)
+                    hover: "#689F38",   // Un poco más oscuro para hover
                     foreground: "#ffffff" // Texto blanco sobre el botón verde
                 },
 
                 // Acentos (Detalles, Iconos, Bordes)
                 accent: {
-                    DEFAULT: "#5D4037", // Café Árbol (Nogal)
-                    hover: "#4E342E",   // Un tono más oscuro para hover
+                    DEFAULT: "#954E28", // Café Terracota (cálido y rojizo)
+                    hover: "#7A3F1F",   // Un tono más oscuro para hover
                     foreground: "#ffffff" // Texto sobre café
                 },
 
@@ -34,7 +34,7 @@ const config: Config = {
                 textMuted: "#57534e",  // Stone 600 - Descripciones
 
                 // Alias para mantener compatibilidad con código existente
-                secondary: "#5D4037",  // Igual que accent.DEFAULT
+                secondary: "#954E28",  // Igual que accent.DEFAULT
             },
         },
     },

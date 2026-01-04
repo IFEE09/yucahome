@@ -1,0 +1,6 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Círculo verde -->
+  <circle cx="32" cy="32" r="32" fill="#7CB342"/>
+  <!-- Letra Y blanca -->
+  <text x="32" y="48" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="white" text-anchor="middle">Y</text>
+</svg>
