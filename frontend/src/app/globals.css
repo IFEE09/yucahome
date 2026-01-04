@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fcf9f2;
+  --foreground: #1a1a1a;
+  --primary: #b8860b;
+  --primary-foreground: #ffffff;
+  --secondary: #2f4f4f;
+  --secondary-foreground: #ffffff;
+  --accent: #d4a373;
+  --muted: #e5e5e5;
+  --card: #ffffff;
+  --border: rgba(184, 134, 11, 0.2);
+}
+
+@theme {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-background: var(--background);
+  --color-accent: var(--accent);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #2f4f4f 0%, #1a1a1a 100%);
+}
+
+.text-gold {
+  color: var(--primary);
+}
+
+.bg-gold {
+  background-color: var(--primary);
+}
+
+.border-gold {
+  border-color: var(--primary);
+}
