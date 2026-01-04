@@ -65,8 +65,8 @@ export default async function Home() {
 
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-textMuted">
             <a href="#" className="hover:text-primary transition-colors">Propiedades</a>
-            <a href="#" className="hover:text-primary transition-colors">Brokers</a>
-            <a href="#" className="hover:text-primary transition-colors">Vender</a>
+            <a href="#" className="hover:text-primary transition-colors">Zonas VIP</a>
+            <a href="#" className="hover:text-primary transition-colors">Guía de Inversión</a>
             <a href="#" className="hover:text-primary transition-colors">Nosotros</a>
           </div>
 
@@ -75,7 +75,7 @@ export default async function Home() {
               Ingresar
             </button>
             <button className="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl">
-              Publicar Propiedad
+              Ver Catálogo
             </button>
           </div>
         </div>
@@ -100,7 +100,7 @@ export default async function Home() {
             <span className="text-primary italic">Corazón de Yucatán</span>
           </h1>
           <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto drop-shadow-md">
-            Conectamos a los mejores brokers del estado con compradores que buscan exclusividad, seguridad y el estilo de vida yucateco.
+            Encuentra la propiedad de tus sueños en las zonas más exclusivas y seguras de Yucatán, con asesoría personalizada en cada paso.
           </p>
 
           <div className="bg-surface p-2 rounded-2xl md:rounded-full shadow-2xl flex flex-col md:flex-row gap-2 max-w-3xl mx-auto backdrop-blur-md">
@@ -146,8 +146,8 @@ export default async function Home() {
               <p className="text-sm text-textMuted uppercase tracking-widest">Propiedades</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-textMain mb-2">+120</p>
-              <p className="text-sm text-textMuted uppercase tracking-widest">Brokers Certificados</p>
+              <p className="text-4xl font-bold text-textMain mb-2">+10k</p>
+              <p className="text-sm text-textMuted uppercase tracking-widest">Inversionistas</p>
             </div>
             <div>
               <p className="text-4xl font-bold text-textMain mb-2">+15</p>
@@ -180,20 +180,20 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Broker CTA */}
+      {/* Exclusive Service CTA */}
       <section className="py-24 bg-textMain overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
           <div className="flex-1 text-white z-10">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 font-playfair">¿Eres Broker en Yucatán?</h2>
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 font-playfair">Asesoría de Guante Blanco</h2>
             <p className="text-white/70 text-lg mb-10 max-w-lg">
-              Únete a la red más exclusiva del estado. Publica tus propiedades, gestiona tus prospectos y cierra más ventas con nuestra tecnología.
+              Te acompañamos en todo el proceso de búsqueda, negociación y cierre para que tu única preocupación sea disfrutar de tu nuevo hogar.
             </p>
             <div className="flex gap-4">
               <button className="bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary/90 transition-all">
-                Registrarme como Broker
+                Solicitar Asesoría VIP
               </button>
               <button className="border border-white/20 text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-all">
-                Saber más
+                Explorar Zonas
               </button>
             </div>
           </div>
@@ -221,7 +221,7 @@ export default async function Home() {
                 YUCA<span className="text-primary">HOME</span>
               </span>
               <p className="text-white/40 max-w-sm mb-8">
-                Líderes en el mercado inmobiliario de Yucatán. Brindamos servicios de alta gama para brokers y compradores exigentes.
+                Líderes en el mercado inmobiliario de Yucatán. Brindamos servicios de alta gama para compradores exigentes.
               </p>
               <div className="flex gap-4">
                 {/* Social icons placeholders */}
@@ -234,7 +234,7 @@ export default async function Home() {
               <h4 className="font-bold mb-6 text-secondary uppercase text-xs tracking-widest">Accesos Rápidos</h4>
               <ul className="space-y-4 text-sm text-white/50">
                 <li><a href="#" className="hover:text-primary transition-colors">Propiedades</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Nuestros Brokers</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Zonas Residenciales</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Blog Inmobiliario</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Aviso de Privacidad</a></li>
               </ul>
