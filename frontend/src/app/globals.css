@@ -1,14 +1,27 @@
 @import "tailwindcss";
 
 :root {
+  /* Fondos */
   --background: #fafaf9;
   --surface: #ffffff;
+
+  /* Primary - Verde Árbol */
   --primary: #15803d;
-  --secondary: #5D4037;
+  --primary-hover: #14532d;
+  --primary-foreground: #ffffff;
+
+  /* Accent - Café Nogal */
+  --accent: #5D4037;
+  --accent-hover: #4E342E;
+  --accent-foreground: #ffffff;
+
+  /* Texto */
   --text-main: #1c1917;
   --text-muted: #57534e;
+
+  /* Alias para compatibilidad */
+  --secondary: #5D4037;
   --foreground: var(--text-main);
-  /* Components */
   --border: rgba(21, 128, 61, 0.1);
   --card: #ffffff;
 }

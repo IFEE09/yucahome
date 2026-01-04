@@ -9,13 +9,32 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                // Paleta natural yucateca
-                background: "#fafaf9", // Stone 50 - Piedra caliza
-                surface: "#ffffff",    // White - Tarjetas limpias
-                primary: "#15803d",    // Green 700 - Verde bosque
-                secondary: "#5D4037",  // Café árbol nogal - Acentos
-                textMain: "#1c1917",   // Stone 900 - Texto principal
-                textMuted: "#57534e",  // Stone 600 - Texto secundario
+                // --- Paleta "Bosque Nativo" ---
+
+                // Fondos
+                background: "#fafaf9", // Stone 50 (Fondo crema suave)
+                surface: "#ffffff",    // White (Para las tarjetas de casas)
+
+                // Acción Principal (Botones, Links importantes)
+                primary: {
+                    DEFAULT: "#15803d", // Green 700 (Verde Árbol)
+                    hover: "#14532d",   // Green 900 (Un poco más oscuro para hover)
+                    foreground: "#ffffff" // Texto blanco sobre el botón verde
+                },
+
+                // Acentos (Detalles, Iconos, Bordes)
+                accent: {
+                    DEFAULT: "#5D4037", // Café Árbol (Nogal)
+                    hover: "#4E342E",   // Un tono más oscuro para hover
+                    foreground: "#ffffff" // Texto sobre café
+                },
+
+                // Texto
+                textMain: "#1c1917",   // Stone 900 - Títulos y precios
+                textMuted: "#57534e",  // Stone 600 - Descripciones
+
+                // Alias para mantener compatibilidad con código existente
+                secondary: "#5D4037",  // Igual que accent.DEFAULT
             },
         },
     },
