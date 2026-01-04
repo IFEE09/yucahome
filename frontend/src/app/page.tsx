@@ -55,15 +55,15 @@ export default async function Home() {
   return (
     <main className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 glass-morphism border-b border-gold/10">
+      <nav className="fixed top-0 w-full z-50 glass-morphism border-b border-primary/10">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-2xl font-bold tracking-tighter text-secondary font-playfair">
+            <span className="text-2xl font-bold tracking-tighter text-textMain font-playfair">
               YUCA<span className="text-primary">HOME</span>
             </span>
           </div>
 
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-secondary/80">
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-textMuted">
             <a href="#" className="hover:text-primary transition-colors">Propiedades</a>
             <a href="#" className="hover:text-primary transition-colors">Brokers</a>
             <a href="#" className="hover:text-primary transition-colors">Vender</a>
@@ -71,10 +71,10 @@ export default async function Home() {
           </div>
 
           <div className="flex items-center gap-4">
-            <button className="text-sm font-semibold text-secondary px-4 py-2 hover:bg-gold/5 rounded-full transition-all">
+            <button className="text-sm font-semibold text-textMain px-4 py-2 hover:bg-primary/5 rounded-full transition-all">
               Ingresar
             </button>
-            <button className="bg-secondary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-secondary/90 transition-all shadow-lg hover:shadow-xl">
+            <button className="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl">
               Publicar Propiedad
             </button>
           </div>
@@ -103,19 +103,19 @@ export default async function Home() {
             Conectamos a los mejores brokers del estado con compradores que buscan exclusividad, seguridad y el estilo de vida yucateco.
           </p>
 
-          <div className="bg-white/95 p-2 rounded-2xl md:rounded-full shadow-2xl flex flex-col md:flex-row gap-2 max-w-3xl mx-auto backdrop-blur-md">
-            <div className="flex-1 px-6 py-3 border-b md:border-b-0 md:border-r border-gray-100">
-              <label className="block text-[10px] uppercase font-bold text-gold mb-1">Ubicación</label>
-              <select className="w-full bg-transparent text-sm font-medium outline-none text-secondary">
+          <div className="bg-surface p-2 rounded-2xl md:rounded-full shadow-2xl flex flex-col md:flex-row gap-2 max-w-3xl mx-auto backdrop-blur-md">
+            <div className="flex-1 px-6 py-3 border-b md:border-b-0 md:border-r border-background">
+              <label className="block text-[10px] uppercase font-bold text-secondary mb-1">Ubicación</label>
+              <select className="w-full bg-transparent text-sm font-medium outline-none text-textMain">
                 <option>Mérida, Centro</option>
                 <option>Norte (Cabo Norte, Temozón)</option>
                 <option>Costa (Progreso, Telchac)</option>
                 <option>Pueblos Mágicos</option>
               </select>
             </div>
-            <div className="flex-1 px-6 py-3 border-b md:border-b-0 md:border-r border-gray-100">
-              <label className="block text-[10px] uppercase font-bold text-gold mb-1">Tipo de Propiedad</label>
-              <select className="w-full bg-transparent text-sm font-medium outline-none text-secondary">
+            <div className="flex-1 px-6 py-3 border-b md:border-b-0 md:border-r border-background">
+              <label className="block text-[10px] uppercase font-bold text-secondary mb-1">Tipo de Propiedad</label>
+              <select className="w-full bg-transparent text-sm font-medium outline-none text-textMain">
                 <option>Residencia de Lujo</option>
                 <option>Hacienda Histórica</option>
                 <option>Departamento / Loft</option>
@@ -123,14 +123,14 @@ export default async function Home() {
               </select>
             </div>
             <div className="flex-1 px-6 py-3">
-              <label className="block text-[10px] uppercase font-bold text-gold mb-1">Rango de Precio</label>
-              <select className="w-full bg-transparent text-sm font-medium outline-none text-secondary">
+              <label className="block text-[10px] uppercase font-bold text-secondary mb-1">Rango de Precio</label>
+              <select className="w-full bg-transparent text-sm font-medium outline-none text-textMain">
                 <option>$2M - $5M MXN</option>
                 <option>$5M - $10M MXN</option>
                 <option>+$10M MXN</option>
               </select>
             </div>
-            <button className="bg-primary text-white px-10 py-4 rounded-full font-bold hover:bg-gold transition-all shadow-lg">
+            <button className="bg-primary text-white px-10 py-4 rounded-full font-bold hover:bg-primary/90 transition-all shadow-lg">
               Buscar
             </button>
           </div>
@@ -138,24 +138,24 @@ export default async function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
             <div>
-              <p className="text-4xl font-bold text-secondary mb-2">+500</p>
-              <p className="text-sm text-gray-500 uppercase tracking-widest">Propiedades</p>
+              <p className="text-4xl font-bold text-textMain mb-2">+500</p>
+              <p className="text-sm text-textMuted uppercase tracking-widest">Propiedades</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-secondary mb-2">+120</p>
-              <p className="text-sm text-gray-500 uppercase tracking-widest">Brokers Certificados</p>
+              <p className="text-4xl font-bold text-textMain mb-2">+120</p>
+              <p className="text-sm text-textMuted uppercase tracking-widest">Brokers Certificados</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-secondary mb-2">+15</p>
-              <p className="text-sm text-gray-500 uppercase tracking-widest">Años de Confianza</p>
+              <p className="text-4xl font-bold text-textMain mb-2">+15</p>
+              <p className="text-sm text-textMuted uppercase tracking-widest">Años de Confianza</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-secondary mb-2">98%</p>
-              <p className="text-sm text-gray-500 uppercase tracking-widest">Clientes Satisfechos</p>
+              <p className="text-4xl font-bold text-textMain mb-2">98%</p>
+              <p className="text-sm text-textMuted uppercase tracking-widest">Clientes Satisfechos</p>
             </div>
           </div>
         </div>
@@ -166,10 +166,10 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-end mb-12">
             <div>
-              <h2 className="text-3xl md:text-5xl font-bold text-secondary mb-4">Propiedades Destacadas</h2>
-              <p className="text-gray-600">Selección exclusiva de inmuebles en las mejores zonas de Yucatán.</p>
+              <h2 className="text-3xl md:text-5xl font-bold text-textMain mb-4">Propiedades Destacadas</h2>
+              <p className="text-textMuted">Selección exclusiva de inmuebles en las mejores zonas de Yucatán.</p>
             </div>
-            <a href="#" className="text-gold font-bold border-b-2 border-gold pb-1 hover:text-primary hover:border-primary transition-all">Ver todas</a>
+            <a href="#" className="text-secondary font-bold border-b-2 border-secondary pb-1 hover:text-primary hover:border-primary transition-all">Ver todas</a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -181,7 +181,7 @@ export default async function Home() {
       </section>
 
       {/* Broker CTA */}
-      <section className="py-24 bg-secondary overflow-hidden relative">
+      <section className="py-24 bg-textMain overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
           <div className="flex-1 text-white z-10">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 font-playfair">¿Eres Broker en Yucatán?</h2>
@@ -189,7 +189,7 @@ export default async function Home() {
               Únete a la red más exclusiva del estado. Publica tus propiedades, gestiona tus prospectos y cierra más ventas con nuestra tecnología.
             </p>
             <div className="flex gap-4">
-              <button className="bg-primary text-secondary px-8 py-4 rounded-full font-bold hover:bg-gold transition-all">
+              <button className="bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary/90 transition-all">
                 Registrarme como Broker
               </button>
               <button className="border border-white/20 text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-all">
@@ -199,10 +199,10 @@ export default async function Home() {
           </div>
           <div className="flex-1 relative h-[400px] w-full bg-white/5 rounded-3xl border border-white/10 glass-morphism p-8">
             <div className="grid grid-cols-2 gap-4">
-              <div className="h-32 bg-gold/20 rounded-2xl animate-pulse" />
+              <div className="h-32 bg-primary/20 rounded-2xl animate-pulse" />
               <div className="h-32 bg-white/10 rounded-2xl" />
               <div className="h-32 bg-white/10 rounded-2xl" />
-              <div className="h-32 bg-gold/10 rounded-3xl animate-pulse" />
+              <div className="h-32 bg-secondary/10 rounded-3xl animate-pulse" />
             </div>
             <div className="mt-8 space-y-4">
               <div className="h-2 w-3/4 bg-white/10 rounded" />
@@ -231,7 +231,7 @@ export default async function Home() {
               </div>
             </div>
             <div>
-              <h4 className="font-bold mb-6 text-gold uppercase text-xs tracking-widest">Accesos Rápidos</h4>
+              <h4 className="font-bold mb-6 text-secondary uppercase text-xs tracking-widest">Accesos Rápidos</h4>
               <ul className="space-y-4 text-sm text-white/50">
                 <li><a href="#" className="hover:text-primary transition-colors">Propiedades</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Nuestros Brokers</a></li>
@@ -240,7 +240,7 @@ export default async function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-6 text-gold uppercase text-xs tracking-widest">Contacto</h4>
+              <h4 className="font-bold mb-6 text-secondary uppercase text-xs tracking-widest">Contacto</h4>
               <ul className="space-y-4 text-sm text-white/50">
                 <li>Calle 60, Mérida, Yucatán</li>
                 <li>contacto@yucahome.com</li>

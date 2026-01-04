@@ -1,53 +1,48 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fcf9f2;
-  --foreground: #1a1a1a;
-  --primary: #b8860b;
-  --primary-foreground: #ffffff;
-  --secondary: #2f4f4f;
-  --secondary-foreground: #ffffff;
-  --accent: #d4a373;
-  --muted: #e5e5e5;
+  --background: #fafaf9;
+  --surface: #ffffff;
+  --primary: #4f46e5;
+  --secondary: #f97316;
+  --text-main: #1c1917;
+  --text-muted: #78716c;
+  --foreground: var(--text-main);
+  /* Components */
+  --border: rgba(79, 70, 229, 0.1);
   --card: #ffffff;
-  --border: rgba(184, 134, 11, 0.2);
 }
 
 @theme {
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-background: var(--background);
-  --color-accent: var(--accent);
+  --color-surface: var(--surface);
+  --color-textMain: var(--text-main);
+  --color-textMuted: var(--text-muted);
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter), sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-playfair), serif;
 }
 
 .glass-morphism {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(79, 70, 229, 0.1);
 }
 
 .hero-gradient {
-  background: linear-gradient(135deg, #2f4f4f 0%, #1a1a1a 100%);
-}
-
-.text-gold {
-  color: var(--primary);
-}
-
-.bg-gold {
-  background-color: var(--primary);
-}
-
-.border-gold {
-  border-color: var(--primary);
+  background: linear-gradient(135deg, #4f46e5 0%, #1c1917 100%);
 }
