@@ -61,16 +61,16 @@ export default async function Home() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8 text-sm font-medium text-textMuted">
-            <a href="#" className="hover:text-primary transition-colors">Propiedades</a>
-            <a href="#" className="hover:text-primary transition-colors">Zonas VIP</a>
-            <a href="#" className="hover:text-primary transition-colors">Guía de Inversión</a>
-            <a href="#" className="hover:text-primary transition-colors">Nosotros</a>
+            <a href="/propiedades" className="hover:text-primary transition-colors">Propiedades</a>
+            <a href="/zonas-vip" className="hover:text-primary transition-colors">Zonas VIP</a>
+            <a href="/guia-inversion" className="hover:text-primary transition-colors">Guía de Inversión</a>
+            <a href="/nosotros" className="hover:text-primary transition-colors">Nosotros</a>
           </div>
 
           <div className="flex items-center gap-4">
-            <button className="bg-primary text-white px-5 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-semibold hover:bg-primary/90 transition-all shadow-lg">
+            <a href="/propiedades" className="bg-primary text-white px-5 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-semibold hover:bg-primary/90 transition-all shadow-lg">
               Catálogo
-            </button>
+            </a>
           </div>
         </div>
       </nav>
