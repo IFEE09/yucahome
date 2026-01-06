@@ -98,9 +98,9 @@ export default async function Home() {
           </p>
 
           <div className="bg-surface/95 md:bg-surface p-3 md:p-2 rounded-3xl md:rounded-full shadow-2xl flex flex-col md:flex-row gap-2 max-w-3xl mx-auto backdrop-blur-md">
-            <div className="flex-1 px-4 md:px-6 py-2 md:py-3 border-b md:border-b-0 md:border-r border-background/50">
-              <label className="block text-[9px] md:text-[10px] uppercase font-bold text-secondary mb-1">Ubicación</label>
-              <select className="w-full bg-transparent text-sm font-medium outline-none text-textMain appearance-none">
+            <div className="flex-1 px-4 md:px-6 py-2 md:py-3 border-b md:border-b-0 md:border-r border-background/50 flex flex-col items-center justify-center">
+              <label className="block text-[9px] md:text-[10px] uppercase font-bold text-secondary mb-1 text-center w-full">Ubicación</label>
+              <select className="w-full bg-transparent text-sm font-medium outline-none text-textMain appearance-none text-center cursor-pointer">
                 <option>Norte</option>
                 <option>Centro</option>
                 <option>Oriente</option>
@@ -109,9 +109,9 @@ export default async function Home() {
                 <option>Playas</option>
               </select>
             </div>
-            <div className="flex-1 px-4 md:px-6 py-2 md:py-3 border-b md:border-b-0 md:border-r border-background/50">
-              <label className="block text-[9px] md:text-[10px] uppercase font-bold text-secondary mb-1">Tipo</label>
-              <select className="w-full bg-transparent text-sm font-medium outline-none text-textMain appearance-none">
+            <div className="flex-1 px-4 md:px-6 py-2 md:py-3 border-b md:border-b-0 md:border-r border-background/50 flex flex-col items-center justify-center">
+              <label className="block text-[9px] md:text-[10px] uppercase font-bold text-secondary mb-1 text-center w-full">Tipo</label>
+              <select className="w-full bg-transparent text-sm font-medium outline-none text-textMain appearance-none text-center cursor-pointer">
                 <option>Residencia de Lujo</option>
                 <option>Hacienda Histórica</option>
                 <option>Departamento / Loft</option>
@@ -119,20 +119,20 @@ export default async function Home() {
                 <option>Terrenos Industriales</option>
               </select>
             </div>
-            <div className="flex-1 px-4 md:px-6 py-2 md:py-3 border-b md:border-b-0 md:border-r border-background/50">
-              <label className="block text-[9px] md:text-[10px] uppercase font-bold text-secondary mb-1">Precio Mín.</label>
+            <div className="flex-1 px-4 md:px-6 py-2 md:py-3 border-b md:border-b-0 md:border-r border-background/50 flex flex-col items-center justify-center">
+              <label className="block text-[9px] md:text-[10px] uppercase font-bold text-secondary mb-1 text-center w-full">Precio Mín.</label>
               <input
                 type="text"
                 placeholder="$ 0"
-                className="w-full bg-transparent text-sm font-medium outline-none text-textMain placeholder:text-textMuted/30"
+                className="w-full bg-transparent text-sm font-medium outline-none text-textMain placeholder:text-textMuted/30 text-center"
               />
             </div>
-            <div className="flex-1 px-4 md:px-6 py-2 md:py-3">
-              <label className="block text-[9px] md:text-[10px] uppercase font-bold text-secondary mb-1">Precio Máx.</label>
+            <div className="flex-1 px-4 md:px-6 py-2 md:py-3 flex flex-col items-center justify-center">
+              <label className="block text-[9px] md:text-[10px] uppercase font-bold text-secondary mb-1 text-center w-full">Precio Máx.</label>
               <input
                 type="text"
                 placeholder="Sin límite"
-                className="w-full bg-transparent text-sm font-medium outline-none text-textMain placeholder:text-textMuted/30"
+                className="w-full bg-transparent text-sm font-medium outline-none text-textMain placeholder:text-textMuted/30 text-center"
               />
             </div>
             <button className="bg-primary text-white w-full md:w-auto px-10 py-4 rounded-2xl md:rounded-full font-bold hover:bg-primary/90 transition-all shadow-lg">

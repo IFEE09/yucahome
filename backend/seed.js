@@ -2,13 +2,24 @@ import sequelize from './config/database.js';
 import User from './models/User.js';
 import bcrypt from 'bcryptjs';
 
+/**
+ * CREDENCIALES DEL USUARIO MAESTRO
+ * ================================
+ * Estas credenciales son fijas y seguras.
+ * Guárdalas en un lugar seguro.
+ */
+const MASTER_CREDENTIALS = {
+    email: 'yh_superadmin_x9k7m@yucahome.internal',
+    password: 'Yh$2026#Mstr!Adm1n_Qx',  // 20 caracteres
+    fullName: 'Yucahome System Administrator'
+};
+
 const seedDatabase = async () => {
     try {
-        // 1. Conectar y Sincronizar (Crea tablas si no existen)
+        // 1. Conectar y Sincronizar
         await sequelize.authenticate();
-        console.log('✅ Base de datos conectada.');
+        console.log('✅ Base de datos PostgreSQL conectada.');
 
-        // force: false para no borrar datos si ya existen
         await sequelize.sync({ force: false });
         console.log('✅ Tablas sincronizadas.');
 
@@ -16,23 +27,28 @@ const seedDatabase = async () => {
         const masterExists = await User.findOne({ where: { role: 'master' } });
 
         if (!masterExists) {
-            console.log('⚡ Creando Usuario Maestro...');
+            console.log('⚡ Creando Usuario Maestro...\n');
 
-            const salt = await bcrypt.genSalt(10);
-            const hashedPassword = await bcrypt.hash('admin123', salt);
+            const salt = await bcrypt.genSalt(12);
+            const hashedPassword = await bcrypt.hash(MASTER_CREDENTIALS.password, salt);
 
             await User.create({
-                fullName: 'Yucahome Admin',
-                email: 'admin@yucahome.com',
+                fullName: MASTER_CREDENTIALS.fullName,
+                email: MASTER_CREDENTIALS.email,
                 password: hashedPassword,
                 role: 'master',
                 active: true,
-                phone: '9999999999'
+                phone: null
             });
 
-            console.log('🎉 Usuario Maestro creado:');
-            console.log('📧 Email: admin@yucahome.com');
-            console.log('🔑 Pass: admin123');
+            console.log('═══════════════════════════════════════════════════════════');
+            console.log('🔐 CREDENCIALES DEL USUARIO MAESTRO');
+            console.log('═══════════════════════════════════════════════════════════');
+            console.log(`📧 Email:    ${MASTER_CREDENTIALS.email}`);
+            console.log(`🔑 Password: ${MASTER_CREDENTIALS.password}`);
+            console.log('═══════════════════════════════════════════════════════════');
+            console.log('✅ Usuario Maestro creado exitosamente.');
+            console.log('═══════════════════════════════════════════════════════════\n');
         } else {
             console.log('ℹ️ El Usuario Maestro ya existe.');
         }

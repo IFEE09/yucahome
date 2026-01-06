@@ -4,6 +4,14 @@ import morgan from 'morgan';
 import dotenv from 'dotenv';
 import sequelize from './config/database.js';
 import authRoutes from './routes/authRoutes.js';
+import dashboardRoutes from './routes/dashboardRoutes.js';
+import { sanitizeInputs } from './middleware/sanitize.js';
+
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config();
 
@@ -12,18 +20,25 @@ const PORT = process.env.PORT || 4000;
 
 // Middleware
 app.use(cors());
-app.use(express.json());
+app.use(express.json({ limit: '10kb' }));
 app.use(morgan('dev'));
 
+// Servir imágenes estáticas
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// Sanitización global para todas las rutas
+app.use(sanitizeInputs);
+
 // Database Connection
-sequelize.sync().then(() => {
-    console.log('✅ Base de datos sincronizada');
+sequelize.sync({ alter: true }).then(() => {
+    console.log('✅ Base de datos sincronizada (Esquema actualizado)');
 }).catch(err => {
     console.error('❌ Error de DB:', err);
 });
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/dashboard', dashboardRoutes);
 
 // Properties array (temporal placeholder)
 const properties = [];
