@@ -45,6 +45,13 @@ const blogPosts = [
   }
 ];
 
+const stats = [
+  { label: "Propiedades", value: "+200", href: "/propiedades" },
+  { label: "Inversionistas", value: "+3k" },
+  { label: "Años de Experiencia", value: "+10" },
+  { label: "Clientes Satisfechos", value: "98%" },
+];
+
 export default async function Home() {
   const properties = await getProperties();
 
@@ -82,18 +89,22 @@ export default async function Home() {
         <HeroSlider />
 
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4 md:px-6">
-          <h1 className="text-4xl md:text-7xl font-bold text-white mb-4 md:mb-6 leading-[1.1] drop-shadow-2xl">
+          <h1 className="text-4xl md:text-7xl font-bold text-white mb-4 md:mb-6 leading-[1.1]" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.6)' }}>
             Tu Patrimonio en el <br className="hidden md:block" />
-            <span className="text-primary italic">Corazón de Yucatán</span>
+            <span className="text-primary italic" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.8)' }}>Corazón de Yucatán</span>
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-8 md:mb-12 max-w-2xl mx-auto drop-shadow-md">
-            Encuentra la propiedad de tus sueños en las zonas más exclusivas de Yucatán, con asesoría personalizada.
+            <span className="md:hidden">Encuentra la propiedad de tus sueños en Yucatán</span>
+            <span className="hidden md:inline">Encuentra la propiedad de tus sueños en las zonas más exclusivas de Yucatán, con asesoría personalizada.</span>
           </p>
 
           <div className="bg-surface/95 md:bg-surface p-3 md:p-2 rounded-3xl md:rounded-full shadow-2xl flex flex-col md:flex-row gap-2 max-w-3xl mx-auto backdrop-blur-md">
             <div className="flex-1 px-4 md:px-6 py-2 md:py-3 border-b md:border-b-0 md:border-r border-background/50 flex flex-col items-center justify-center">
               <label className="block text-[9px] md:text-[10px] uppercase font-bold text-secondary mb-1 text-center w-full">Ubicación</label>
-              <select className="w-full bg-transparent text-sm font-medium outline-none text-textMain appearance-none text-center cursor-pointer">
+              <select
+                className="w-full bg-transparent text-sm font-medium outline-none text-textMain appearance-none text-center cursor-pointer"
+                style={{ textAlignLast: 'center' }}
+              >
                 <option>Norte</option>
                 <option>Centro</option>
                 <option>Oriente</option>
@@ -104,11 +115,15 @@ export default async function Home() {
             </div>
             <div className="flex-1 px-4 md:px-6 py-2 md:py-3 border-b md:border-b-0 md:border-r border-background/50 flex flex-col items-center justify-center">
               <label className="block text-[9px] md:text-[10px] uppercase font-bold text-secondary mb-1 text-center w-full">Tipo</label>
-              <select className="w-full bg-transparent text-sm font-medium outline-none text-textMain appearance-none text-center cursor-pointer">
+              <select
+                className="w-full bg-transparent text-sm font-medium outline-none text-textMain appearance-none text-center cursor-pointer"
+                style={{ textAlignLast: 'center' }}
+              >
                 <option>Residencia de Lujo</option>
-                <option>Hacienda Histórica</option>
+                <option>Casa en Centro Histórico</option>
                 <option>Departamento / Loft</option>
-                <option>Terreno de Inversión</option>
+                <option>Terreno Residencial</option>
+                <option>Terreno para Inversión</option>
                 <option>Terrenos Industriales</option>
               </select>
             </div>
@@ -132,6 +147,16 @@ export default async function Home() {
               Buscar
             </button>
           </div>
+
+          {/* Botón Móvil Extra - Explorar */}
+          <div className="mt-8 md:hidden flex justify-center">
+            <a href="#featured" className="group flex items-center gap-2 text-white/90 text-sm font-medium border-b border-white/30 pb-1">
+              Explorar Propiedad de Fondo
+              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -141,8 +166,17 @@ export default async function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
             {stats.map((stat, index) => (
               <div key={index} className="space-y-1 md:space-y-2">
-                <p className="text-3xl md:text-5xl font-bold text-textMain tracking-tight">{stat.value}</p>
-                <p className="text-[10px] md:text-xs text-textMuted uppercase tracking-[0.2em] font-medium">{stat.label}</p>
+                {stat.href ? (
+                  <a href={stat.href} className="group block">
+                    <p className="text-3xl md:text-5xl font-bold text-secondary tracking-tight group-hover:text-primary transition-colors">{stat.value}</p>
+                    <p className="text-[10px] md:text-xs text-textMuted uppercase tracking-[0.2em] font-medium group-hover:text-primary transition-colors">{stat.label}</p>
+                  </a>
+                ) : (
+                  <>
+                    <p className="text-3xl md:text-5xl font-bold text-secondary tracking-tight">{stat.value}</p>
+                    <p className="text-[10px] md:text-xs text-textMuted uppercase tracking-[0.2em] font-medium">{stat.label}</p>
+                  </>
+                )}
               </div>
             ))}
           </div>
@@ -195,27 +229,27 @@ export default async function Home() {
       </section>
 
       {/* Exclusive Service CTA */}
-      <section className="py-16 md:py-24 bg-textMain overflow-hidden relative mx-4 md:mx-6 rounded-[2.5rem]">
+      <section className="py-16 md:py-24 bg-[#ECEAE4] overflow-hidden relative mx-4 md:mx-6 rounded-[2.5rem]">
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           <div className="flex-1 text-center lg:text-left z-10">
-            <h2 className="text-3xl md:text-6xl font-bold mb-6 font-playfair text-white leading-tight">Asesoría de <span className="text-primary italic">Guante Blanco</span></h2>
-            <p className="text-white/70 text-base md:text-lg mb-8 md:mb-10 max-w-lg mx-auto lg:mx-0">
+            <h2 className="text-3xl md:text-6xl font-bold mb-6 font-playfair text-textMain leading-tight">Tu Experto Local en <span className="text-primary italic">Yucatán</span></h2>
+            <p className="text-textMuted text-base md:text-lg mb-8 md:mb-10 max-w-lg mx-auto lg:mx-0">
               Te acompañamos en todo el proceso para que tu única preocupación sea disfrutar de tu nuevo hogar.
             </p>
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
               <button className="bg-primary text-white px-10 py-4 rounded-full font-bold hover:bg-primary/90 transition-all shadow-xl">
-                Asesoría VIP
+                Obtén Asesoría VIP Ahora
               </button>
-              <button className="border border-white/20 text-white px-10 py-4 rounded-full font-bold hover:bg-white/10 transition-all">
+              <a href="/propiedades" className="border border-textMain/10 text-textMain px-10 py-4 rounded-full font-bold hover:bg-white/50 transition-all">
                 Explorar Zonas
-              </button>
+              </a>
             </div>
           </div>
-          <div className="flex-1 relative w-full lg:h-[450px] aspect-square lg:aspect-auto bg-white/5 rounded-[2rem] border border-white/10 glass-morphism p-6 md:p-10 pointer-events-none">
+          <div className="flex-1 relative w-full lg:h-[450px] aspect-square lg:aspect-auto bg-white/40 rounded-[2rem] border border-white/50 p-6 md:p-10 pointer-events-none">
             <div className="grid grid-cols-2 gap-4 h-full">
-              <div className="h-full bg-primary/20 rounded-2xl animate-pulse" />
+              <div className="h-full bg-primary/10 rounded-2xl animate-pulse" />
               <div className="space-y-4">
-                <div className="h-[60%] bg-white/10 rounded-2xl" />
+                <div className="h-[60%] bg-white/60 rounded-2xl" />
                 <div className="h-[30%] bg-secondary/10 rounded-2xl" />
               </div>
               <div className="col-span-2 h-[20%] bg-white/5 rounded-2xl flex items-center px-6">
@@ -308,9 +342,4 @@ export default async function Home() {
   );
 }
 
-const stats = [
-  { label: "Propiedades", value: "+200" },
-  { label: "Inversionistas", value: "+3k" },
-  { label: "Años", value: "+10" },
-  { label: "Satisfechos", value: "98%" },
-];
+

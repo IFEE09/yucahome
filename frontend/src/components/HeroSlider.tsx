@@ -74,14 +74,14 @@ export default function HeroSlider() {
             {heroSlides.map((slide, index) => (
                 <div
                     key={slide.id}
-                    className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+                    className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
                         }`}
                 >
                     <Image
                         src={slide.image}
                         alt={slide.title}
                         fill
-                        className="object-cover brightness-[0.55]"
+                        className={`object-cover brightness-[0.55] transition-transform duration-[6000ms] ease-out ${index === currentSlide ? 'scale-110' : 'scale-100'}`}
                         priority={index === 0}
                     />
                 </div>
@@ -97,38 +97,40 @@ export default function HeroSlider() {
                         key={index}
                         onClick={() => goToSlide(index)}
                         className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentSlide
-                                ? 'w-8 bg-primary'
-                                : 'bg-white/50 hover:bg-white/80'
+                            ? 'w-8 bg-primary'
+                            : 'bg-white/50 hover:bg-white/80'
                             }`}
                         aria-label={`Ir a slide ${index + 1}`}
                     />
                 ))}
             </div>
 
-            {/* Tarjeta de propiedad actual */}
-            <div className="absolute bottom-24 left-4 md:left-8 z-20 max-w-sm">
-                <div className="glass-morphism rounded-2xl p-4 md:p-5 backdrop-blur-xl bg-white/90 border border-white/20 shadow-2xl transition-all duration-500">
-                    <div className="flex items-center justify-between mb-2">
-                        <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-secondary">
+            {/* Tarjeta de propiedad actual - Minimalista */}
+            <div className="absolute bottom-32 md:bottom-24 left-6 md:left-12 z-20 max-w-sm pointer-events-none">
+                <div className="flex flex-col items-start text-left space-y-2 pointer-events-auto">
+                    <div className="bg-black/30 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+                        <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/90">
                             {currentProperty.type}
                         </span>
-                        <span className="text-[10px] md:text-xs text-textMuted">
-                            {currentProperty.location}
-                        </span>
                     </div>
-                    <h3 className="text-lg md:text-xl font-bold text-textMain mb-1 line-clamp-1">
-                        {currentProperty.title}
-                    </h3>
-                    <p className="text-primary font-bold text-lg md:text-xl mb-3">
-                        {currentProperty.price}
-                    </p>
+
+                    <div className="space-y-1">
+                        <h3 className="text-2xl md:text-3xl font-playfair font-bold text-white leading-tight drop-shadow-lg">
+                            {currentProperty.title}
+                        </h3>
+                        <p className="text-white/80 text-sm md:text-base font-light flex items-center gap-1">
+                            <span className="w-1 h-1 rounded-full bg-primary inline-block"></span>
+                            {currentProperty.location}
+                        </p>
+                    </div>
+
                     <a
                         href={currentProperty.propertyUrl}
-                        className="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full text-xs md:text-sm font-semibold hover:bg-primary/90 transition-all shadow-lg group"
+                        className="hidden md:flex group relative z-50 items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 px-6 py-3 rounded-full text-white text-sm font-bold mt-6 hover:bg-white hover:text-black transition-all duration-300"
                     >
-                        Ver Propiedad
+                        Explorar Propiedad
                         <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </a>
                 </div>

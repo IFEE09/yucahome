@@ -101,10 +101,14 @@ export default function CreatePropertyModal({ isOpen, onClose, onSuccess }: Prop
                     )}
 
                     <form ref={formRef} onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
-                        {/* Foto Principal */}
+                        {/* Foto Principal / Portada */}
                         <div>
-                            <label className="block text-[10px] md:text-xs uppercase font-bold text-textMuted mb-2">Foto Principal</label>
-                            <div className="relative border-2 border-dashed border-gray-300 rounded-2xl p-6 md:p-8 hover:border-primary transition-colors bg-gray-50 text-center group active:scale-[0.99] touch-manipulation">
+                            <label className="flex justify-between items-center text-[10px] md:text-xs uppercase font-bold text-textMuted mb-2">
+                                <span>{isVip ? 'Foto de Portada (Hero Background)' : 'Foto Principal'}</span>
+                                {isVip && <span className="text-primary animate-pulse">✨ Se usará en el Home</span>}
+                            </label>
+
+                            <div className={`relative border-2 border-dashed rounded-2xl p-6 md:p-8 transition-colors text-center group active:scale-[0.99] touch-manipulation ${isVip ? 'border-primary/50 bg-primary/5 hover:border-primary' : 'border-gray-300 bg-gray-50 hover:border-primary'}`}>
                                 <input
                                     type="file"
                                     name="image"
@@ -113,13 +117,17 @@ export default function CreatePropertyModal({ isOpen, onClose, onSuccess }: Prop
                                     className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                                 />
                                 <div className="flex flex-col items-center pointer-events-none">
-                                    <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <div className={`w-12 h-12 rounded-full shadow-sm flex items-center justify-center mb-3 group-hover:scale-110 transition-transform ${isVip ? 'bg-primary text-white' : 'bg-white text-primary'}`}>
+                                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                         </svg>
                                     </div>
-                                    <span className="text-sm text-textMain font-semibold group-hover:text-primary transition-colors">Subir imagen</span>
-                                    <span className="text-xs text-textMuted mt-1">JPG, PNG o WEBP</span>
+                                    <span className={`text-sm font-semibold transition-colors ${isVip ? 'text-primary' : 'text-textMain group-hover:text-primary'}`}>
+                                        {isVip ? 'Seleccionar Portada Exclusiva' : 'Subir imagen'}
+                                    </span>
+                                    <span className="text-xs text-textMuted mt-1">
+                                        {isVip ? 'Recomendado: Horizontal 1920x1080px (Alta Calidad)' : 'JPG, PNG o WEBP'}
+                                    </span>
                                 </div>
                             </div>
                         </div>
