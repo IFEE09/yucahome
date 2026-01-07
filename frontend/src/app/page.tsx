@@ -150,7 +150,7 @@ export default async function Home() {
 
           {/* Botón Móvil Extra - Explorar */}
           <div className="mt-8 md:hidden flex justify-center">
-            <a href="#featured" className="group flex items-center gap-2 text-white/90 text-sm font-medium border-b border-white/30 pb-1">
+            <a href="#featured" className="group flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 px-6 py-3 rounded-full text-white text-sm font-bold hover:bg-white hover:text-black transition-all duration-300">
               Explorar Propiedad de Fondo
               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
