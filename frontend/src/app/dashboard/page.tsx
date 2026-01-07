@@ -96,7 +96,7 @@ export default function Dashboard() {
                         <p className="text-4xl font-playfair text-secondary font-bold">0</p>
                     </div>
                     <div className="bg-surface p-8 rounded-[2rem] border border-primary/5 shadow-sm">
-                        <h3 className="text-textMuted text-xs uppercase font-bold mb-2">Interesados</h3>
+                        <h3 className="text-textMuted text-xs uppercase font-bold mb-2">Clientes</h3>
                         <p className="text-4xl font-playfair text-secondary font-bold">0</p>
                     </div>
                 </div>

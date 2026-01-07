@@ -2,6 +2,7 @@ import Image from "next/image";
 import PropertyCard from "@/components/PropertyCard";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import BlogCard from "@/components/BlogCard";
+import HeroSlider from "@/components/HeroSlider";
 
 async function getProperties() {
   // In production, this would be an absolute URL
@@ -65,6 +66,7 @@ export default async function Home() {
             <a href="/zonas-vip" className="hover:text-primary transition-colors">Zonas VIP</a>
             <a href="/guia-inversion" className="hover:text-primary transition-colors">Guía de Inversión</a>
             <a href="/nosotros" className="hover:text-primary transition-colors">Nosotros</a>
+            <a href="#noticias" className="hover:text-primary transition-colors">Consejos y Noticias</a>
           </div>
 
           <div className="flex items-center gap-4">
@@ -77,16 +79,7 @@ export default async function Home() {
 
       {/* Hero Section */}
       <section className="relative min-h-[85vh] md:h-[90vh] flex items-center justify-center pt-20 pb-12">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero.png"
-            alt="Luxury Home in Yucatan"
-            fill
-            className="object-cover brightness-[0.6] md:brightness-75"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/40" />
-        </div>
+        <HeroSlider />
 
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4 md:px-6">
           <h1 className="text-4xl md:text-7xl font-bold text-white mb-4 md:mb-6 leading-[1.1] drop-shadow-2xl">
@@ -234,7 +227,7 @@ export default async function Home() {
       </section>
 
       {/* Blog Section */}
-      <section className="py-16 md:py-24 bg-background px-4 md:px-6">
+      <section id="noticias" className="py-16 md:py-24 bg-background px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 gap-6">
             <div className="max-w-xl">
@@ -283,7 +276,7 @@ export default async function Home() {
               <ul className="space-y-4 text-sm text-white/50">
                 <li><a href="#" className="hover:text-primary transition-colors">Propiedades</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Zonas Residenciales</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Blog Inmobiliario</a></li>
+                <li><a href="#noticias" className="hover:text-primary transition-colors">Blog Inmobiliario</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Privacidad</a></li>
               </ul>
             </div>
