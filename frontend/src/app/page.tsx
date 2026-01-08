@@ -89,11 +89,11 @@ export default async function Home() {
         <HeroSlider />
 
         <div className="relative z-10 max-w-4xl mx-auto text-center px-4 md:px-6">
-          <h1 className="text-4xl md:text-7xl font-bold text-white mb-4 md:mb-6 leading-[1.1]" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.6)' }}>
+          <h1 className="text-3xl md:text-7xl font-bold text-white mb-4 md:mb-6 leading-[1.1]" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.6)' }}>
             Tu Patrimonio en el <br className="hidden md:block" />
             <span className="text-primary italic" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.8)' }}>Corazón de Yucatán</span>
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 md:mb-12 max-w-2xl mx-auto drop-shadow-md">
+          <p className="text-base md:text-xl text-white/90 mb-8 md:mb-12 max-w-2xl mx-auto drop-shadow-md">
             <span className="md:hidden">Encuentra la propiedad de tus sueños en Yucatán</span>
             <span className="hidden md:inline">Encuentra la propiedad de tus sueños en las zonas más exclusivas de Yucatán, con asesoría personalizada.</span>
           </p>
@@ -128,18 +128,34 @@ export default async function Home() {
               </select>
             </div>
             <div className="flex-1 px-4 md:px-6 py-2 md:py-3 border-b md:border-b-0 md:border-r border-background/50 flex flex-col items-center justify-center">
-              <label className="block text-[9px] md:text-[10px] uppercase font-bold text-secondary mb-1 text-center w-full">Precio Mín.</label>
+              <label className="block text-[9px] md:text-[10px] uppercase font-bold text-secondary mb-1 text-center w-full">Estilo de Vida</label>
+              <select
+                className="w-full bg-transparent text-sm font-medium outline-none text-textMain appearance-none text-center cursor-pointer"
+                style={{ textAlignLast: 'center' }}
+              >
+                <option>Estilo Urbano / Ciudad</option>
+                <option>Estilo Residencial Familiar</option>
+                <option>Estilo Naturaleza / Verde</option>
+                <option>Estilo Playa / Costa</option>
+                <option>Estilo Inversión / Rentabilidad</option>
+                <option>Estilo Exclusivo / Premium</option>
+                <option>Estilo Práctico / Funcional</option>
+                <option>Estilo Retiro / Jubilados</option>
+              </select>
+            </div>
+            <div className="flex-1 px-4 md:px-6 py-2 md:py-3 border-b md:border-b-0 md:border-r border-background/50 flex flex-col items-center justify-center">
+              <label className="block text-[9px] md:text-[10px] uppercase font-bold text-secondary mb-1 text-center w-full">Presupuesto Mín.</label>
               <input
                 type="text"
-                placeholder="$ 0"
+                placeholder="$MXN"
                 className="w-full bg-transparent text-sm font-medium outline-none text-textMain placeholder:text-textMuted/30 text-center"
               />
             </div>
             <div className="flex-1 px-4 md:px-6 py-2 md:py-3 flex flex-col items-center justify-center">
-              <label className="block text-[9px] md:text-[10px] uppercase font-bold text-secondary mb-1 text-center w-full">Precio Máx.</label>
+              <label className="block text-[9px] md:text-[10px] uppercase font-bold text-secondary mb-1 text-center w-full">Presupuesto Máx.</label>
               <input
                 type="text"
-                placeholder="Sin límite"
+                placeholder="$MXN"
                 className="w-full bg-transparent text-sm font-medium outline-none text-textMain placeholder:text-textMuted/30 text-center"
               />
             </div>
@@ -288,7 +304,7 @@ export default async function Home() {
       {/* Footer */}
       <footer className="bg-[#1a1a1a] py-16 md:py-24 text-white px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
             <div className="col-span-1 sm:col-span-2">
               <span className="text-2xl md:text-3xl font-bold tracking-tighter mb-6 block text-secondary">
                 <span className="flex items-end">
@@ -305,15 +321,7 @@ export default async function Home() {
                 <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-all cursor-pointer text-sm">in</div>
               </div>
             </div>
-            <div>
-              <h4 className="font-bold mb-6 text-secondary uppercase text-[10px] md:text-xs tracking-widest">Accesos Rápidos</h4>
-              <ul className="space-y-4 text-sm text-white/50">
-                <li><a href="#" className="hover:text-primary transition-colors">Propiedades</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Zonas Residenciales</a></li>
-                <li><a href="#noticias" className="hover:text-primary transition-colors">Blog Inmobiliario</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Privacidad</a></li>
-              </ul>
-            </div>
+
             <div>
               <h4 className="font-bold mb-6 text-secondary uppercase text-[10px] md:text-xs tracking-widest">Contacto</h4>
               <ul className="space-y-4 text-sm text-white/50">
