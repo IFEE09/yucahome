@@ -43,7 +43,7 @@ export default function SellerLeadPopup() {
         <>
             {/* TEASER BUBBLE (Bottom Right, above WhatsApp button) */}
             {!showForm && isVisible && (
-                <div className="fixed bottom-24 right-6 z-40 animate-in slide-in-from-bottom-5 duration-500">
+                <div className="fixed bottom-24 right-6 z-40 animate-in fade-in slide-in-from-bottom-8 duration-1000 ease-out">
                     <div className="relative bg-white text-textMain rounded-2xl shadow-xl p-4 pr-10 flex items-center gap-4 border border-gray-100 max-w-[300px] md:max-w-sm cursor-pointer hover:shadow-2xl hover:-translate-y-1 transition-all duration-300" onClick={() => setShowForm(true)}>
                         {/* Close Button X */}
                         <button
