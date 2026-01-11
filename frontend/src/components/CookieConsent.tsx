@@ -9,7 +9,7 @@ export default function CookieConsent() {
     useEffect(() => {
         setIsMounted(true);
         // Check if consent was already given
-        const consent = localStorage.getItem("yucahome_cookie_consent_v2");
+        const consent = localStorage.getItem("mindhaus_cookie_consent_v1");
         if (!consent) {
             setIsVisible(true);
             // Disable scrolling while modal is open
@@ -18,7 +18,7 @@ export default function CookieConsent() {
     }, []);
 
     const handleAccept = () => {
-        localStorage.setItem("yucahome_cookie_consent_v2", "true");
+        localStorage.setItem("mindhaus_cookie_consent_v1", "true");
         setIsVisible(false);
         // Re-enable scrolling
         document.body.style.overflow = "unset";

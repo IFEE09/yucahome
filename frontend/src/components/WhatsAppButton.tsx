@@ -2,7 +2,7 @@
 
 export default function WhatsAppButton() {
     const phoneNumber = "5219991234567"; // Reemplaza con el número de WhatsApp real
-    const message = "Hola, estoy interesado en conocer más sobre las propiedades en Yucahome";
+    const message = "Hola, estoy interesado en conocer más sobre las propiedades en MindHaus";
 
     const handleClick = () => {
         const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

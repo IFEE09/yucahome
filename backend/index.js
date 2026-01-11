@@ -47,7 +47,7 @@ const properties = [];
 
 app.get('/', (req, res) => {
     res.json({
-        message: 'Bienvenido a la API de Yucahome',
+        message: 'Bienvenido a la API de MindHaus',
         status: 'Server running',
         version: '1.0.0'
     });
@@ -63,5 +63,5 @@ app.get('/api/health', (req, res) => {
 
 // Start Server
 app.listen(PORT, () => {
-    console.log(`🚀 Servidor de Yucahome corriendo en http://localhost:${PORT}`);
+    console.log(`🚀 Servidor de MindHaus corriendo en http://localhost:${PORT}`);
 });

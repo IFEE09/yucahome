@@ -28,7 +28,7 @@ export const login = async (req, res) => {
         );
 
         res.json({
-            message: 'Bienvenido a Yucahome',
+            message: 'Bienvenido a MindHaus',
             token,
             user: {
                 id: user.id,
