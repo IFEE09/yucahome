@@ -43,6 +43,32 @@ const seedDatabase = async () => {
             console.log('ℹ️ El Usuario Maestro ya existe.');
         }
 
+        // 2.1 Verificar si existe Broker por defecto
+        const brokerEmail = 'broker@yucahome.com';
+        const brokerPass = 'BrokerYuca2026!'; // 15 chars, strong
+        const brokerExists = await User.findOne({ where: { email: brokerEmail } });
+
+        const salt = await bcrypt.genSalt(12);
+        const hashedBrokerPass = await bcrypt.hash(brokerPass, salt);
+
+        if (!brokerExists) {
+            console.log('⚡ Creando Usuario Broker por defecto...\n');
+            await User.create({
+                fullName: 'Broker Yucahome',
+                email: brokerEmail,
+                password: hashedBrokerPass,
+                role: 'broker',
+                active: true,
+                phone: '9991234567'
+            });
+            console.log('✅ Usuario Broker creado exitosamente.');
+        } else {
+            console.log('🔄 Actualizando contraseña de Broker por defecto...\n');
+            brokerExists.password = hashedBrokerPass;
+            await brokerExists.save();
+            console.log('✅ Contraseña de Broker actualizada.');
+        }
+
         // 3. Sembrar Perfiles de Comprador
         const profilesExist = await Profile.count();
         if (profilesExist === 0) {

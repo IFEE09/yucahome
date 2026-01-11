@@ -3,6 +3,8 @@ import PropertyCard from "@/components/PropertyCard";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import BlogCard from "@/components/BlogCard";
 import HeroSlider from "@/components/HeroSlider";
+import SearchFilters from "@/components/SearchFilters";
+import SellerLeadPopup from "@/components/SellerLeadPopup";
 
 async function getProperties() {
   // In production, this would be an absolute URL
@@ -98,71 +100,7 @@ export default async function Home() {
             <span className="hidden md:inline">Encuentra la propiedad de tus sueños en las zonas más exclusivas de Yucatán, con asesoría personalizada.</span>
           </p>
 
-          <div className="bg-surface/95 md:bg-surface p-3 md:p-2 rounded-3xl md:rounded-full shadow-2xl flex flex-col md:flex-row gap-2 max-w-3xl mx-auto backdrop-blur-md">
-            <div className="flex-1 px-4 md:px-6 py-2 md:py-3 border-b md:border-b-0 md:border-r border-background/50 flex flex-col items-center justify-center">
-              <label className="block text-[9px] md:text-[10px] uppercase font-bold text-secondary mb-1 text-center w-full">Ubicación</label>
-              <select
-                className="w-full bg-transparent text-sm font-medium outline-none text-textMain appearance-none text-center cursor-pointer"
-                style={{ textAlignLast: 'center' }}
-              >
-                <option>Norte</option>
-                <option>Centro</option>
-                <option>Oriente</option>
-                <option>Poniente</option>
-                <option>Sur</option>
-                <option>Playas</option>
-              </select>
-            </div>
-            <div className="flex-1 px-4 md:px-6 py-2 md:py-3 border-b md:border-b-0 md:border-r border-background/50 flex flex-col items-center justify-center">
-              <label className="block text-[9px] md:text-[10px] uppercase font-bold text-secondary mb-1 text-center w-full">Tipo</label>
-              <select
-                className="w-full bg-transparent text-sm font-medium outline-none text-textMain appearance-none text-center cursor-pointer"
-                style={{ textAlignLast: 'center' }}
-              >
-                <option>Residencia de Lujo</option>
-                <option>Casa en Centro Histórico</option>
-                <option>Departamento / Loft</option>
-                <option>Terreno Residencial</option>
-                <option>Terreno para Inversión</option>
-                <option>Terrenos Industriales</option>
-              </select>
-            </div>
-            <div className="flex-1 px-4 md:px-6 py-2 md:py-3 border-b md:border-b-0 md:border-r border-background/50 flex flex-col items-center justify-center">
-              <label className="block text-[9px] md:text-[10px] uppercase font-bold text-secondary mb-1 text-center w-full">Estilo de Vida</label>
-              <select
-                className="w-full bg-transparent text-sm font-medium outline-none text-textMain appearance-none text-center cursor-pointer"
-                style={{ textAlignLast: 'center' }}
-              >
-                <option>Estilo Urbano / Ciudad</option>
-                <option>Estilo Residencial Familiar</option>
-                <option>Estilo Naturaleza / Verde</option>
-                <option>Estilo Playa / Costa</option>
-                <option>Estilo Inversión / Rentabilidad</option>
-                <option>Estilo Exclusivo / Premium</option>
-                <option>Estilo Práctico / Funcional</option>
-                <option>Estilo Retiro / Jubilados</option>
-              </select>
-            </div>
-            <div className="flex-1 px-4 md:px-6 py-2 md:py-3 border-b md:border-b-0 md:border-r border-background/50 flex flex-col items-center justify-center">
-              <label className="block text-[9px] md:text-[10px] uppercase font-bold text-secondary mb-1 text-center w-full">Presupuesto Mín.</label>
-              <input
-                type="text"
-                placeholder="$MXN"
-                className="w-full bg-transparent text-sm font-medium outline-none text-textMain placeholder:text-textMuted/30 text-center"
-              />
-            </div>
-            <div className="flex-1 px-4 md:px-6 py-2 md:py-3 flex flex-col items-center justify-center">
-              <label className="block text-[9px] md:text-[10px] uppercase font-bold text-secondary mb-1 text-center w-full">Presupuesto Máx.</label>
-              <input
-                type="text"
-                placeholder="$MXN"
-                className="w-full bg-transparent text-sm font-medium outline-none text-textMain placeholder:text-textMuted/30 text-center"
-              />
-            </div>
-            <button className="bg-primary text-white w-full md:w-auto px-10 py-4 rounded-2xl md:rounded-full font-bold hover:bg-primary/90 transition-all shadow-lg">
-              Buscar
-            </button>
-          </div>
+          <SearchFilters />
 
           {/* Botón Móvil Extra - Explorar */}
           <div className="mt-8 md:hidden flex justify-center">
@@ -346,6 +284,7 @@ export default async function Home() {
       </footer>
 
       <WhatsAppButton />
+      <SellerLeadPopup />
     </main>
   );
 }
