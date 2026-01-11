@@ -42,7 +42,7 @@ export default function Dashboard() {
                 <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
                     <div className="flex items-center gap-2">
                         <span className="text-xl font-bold tracking-tighter text-secondary flex items-end mb-1">
-                            <span className="font-handwritten text-4xl normal-case mr-2 leading-none transform translate-y-1.5">Yuca</span>
+                            <span className="font-handwritten text-4xl normal-case mr-2 leading-none transform translate-y-1.5">Mind</span>
                             <span className="font-playfair text-primary mb-0.5">ADMIN</span>
                         </span>
                     </div>

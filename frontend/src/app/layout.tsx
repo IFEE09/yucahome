@@ -19,8 +19,8 @@ const handwritten = Allura({
 });
 
 export const metadata: Metadata = {
-  title: "Yucahome | Propiedades Exclusivas en Yucatán",
-  description: "Encuentra la propiedad de tus sueños en las zonas más exclusivas de Yucatán. Tu patrimonio en el corazón de la península.",
+  title: "MindHaus | Propiedades Exclusivas",
+  description: "Encuentra la propiedad de tus sueños en las zonas más exclusivas. Tu patrimonio en el corazón de la península.",
 };
 
 export const viewport = {

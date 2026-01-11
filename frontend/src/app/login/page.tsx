@@ -52,8 +52,8 @@ export default function BrokerLogin() {
             <div className="max-w-md w-full">
                 <div className="text-center mb-10">
                     <span className="text-2xl font-bold tracking-tighter text-secondary flex justify-center items-end mb-4">
-                        <span className="font-handwritten text-6xl normal-case mr-3 leading-none transform translate-y-2.5">Yuca</span>
-                        <span className="font-playfair text-primary mb-1">HOME</span>
+                        <span className="font-handwritten text-6xl normal-case mr-3 leading-none transform translate-y-2.5">Mind</span>
+                        <span className="font-playfair text-primary mb-1">HAUS</span>
                     </span>
                     <h1 className="text-3xl font-bold text-textMain mb-2">Acceso para Brokers</h1>
                     <p className="text-textMuted text-sm">Gestiona tus exclusivas y conecta con compradores de alto nivel.</p>
@@ -73,7 +73,7 @@ export default function BrokerLogin() {
                                 type="text"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                placeholder="usuario@yucahome.com"
+                                placeholder="usuario@mindhaus.com"
                                 className="w-full bg-background border border-primary/10 rounded-2xl px-5 py-4 text-sm outline-none focus:border-primary transition-all text-textMain"
                             />
                         </div>

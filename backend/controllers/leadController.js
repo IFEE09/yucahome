@@ -1,4 +1,5 @@
 import SellerLead from '../models/SellerLead.js';
+import { sendLeadNotification } from '../utils/emailService.js';
 
 // Crear un nuevo lead de vendedor
 export const createSellerLead = async (req, res) => {
@@ -14,6 +15,11 @@ export const createSellerLead = async (req, res) => {
             surname,
             phone,
             email
+        });
+
+        // Enviar notificación por correo (Asíncrono, no bloqueamos la respuesta)
+        sendLeadNotification(newLead).then(sent => {
+            if (sent) console.log(`Lead ${newLead.id} notificado por correo.`);
         });
 
         res.status(201).json({

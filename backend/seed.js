@@ -44,8 +44,9 @@ const seedDatabase = async () => {
         }
 
         // 2.1 Verificar si existe Broker por defecto
-        const brokerEmail = 'broker@yucahome.com';
-        const brokerPass = 'BrokerYuca2026!'; // 15 chars, strong
+        // 2.1 Verificar si existe Broker por defecto
+        const brokerEmail = 'broker@mindhaus.com';
+        const brokerPass = 'BrokerMind2026!'; // 15 chars, strong
         const brokerExists = await User.findOne({ where: { email: brokerEmail } });
 
         const salt = await bcrypt.genSalt(12);
@@ -54,7 +55,7 @@ const seedDatabase = async () => {
         if (!brokerExists) {
             console.log('⚡ Creando Usuario Broker por defecto...\n');
             await User.create({
-                fullName: 'Broker Yucahome',
+                fullName: 'Broker MindHaus',
                 email: brokerEmail,
                 password: hashedBrokerPass,
                 role: 'broker',
@@ -63,8 +64,9 @@ const seedDatabase = async () => {
             });
             console.log('✅ Usuario Broker creado exitosamente.');
         } else {
-            console.log('🔄 Actualizando contraseña de Broker por defecto...\n');
+            console.log('🔄 Actualizando credenciales de Broker por defecto...\n');
             brokerExists.password = hashedBrokerPass;
+            brokerExists.fullName = 'Broker MindHaus';
             await brokerExists.save();
             console.log('✅ Contraseña de Broker actualizada.');
         }

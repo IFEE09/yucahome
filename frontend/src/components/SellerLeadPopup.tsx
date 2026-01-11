@@ -38,6 +38,12 @@ export default function SellerLeadPopup() {
             return;
         }
 
+        const confirmSubmission = window.confirm(
+            `¿Son correctos tus datos?\n\nNombre: ${formData.name} ${formData.surname}\nTeléfono: ${formData.phone}\nCorreo: ${formData.email}`
+        );
+
+        if (!confirmSubmission) return;
+
         try {
             const res = await fetch('http://localhost:4000/api/leads/seller', {
                 method: 'POST',
@@ -122,7 +128,7 @@ export default function SellerLeadPopup() {
                                 </svg>
                             </button>
                             <h3 className="text-2xl font-bold text-white font-playfair">Vende con Nosotros</h3>
-                            <p className="text-white/80 text-sm mt-1">Déjanos tus datos y un asesor experto te contactará.</p>
+                            <p className="text-gray-100 text-sm mt-1">Compártenos tus datos</p>
                         </div>
 
                         {/* Form */}

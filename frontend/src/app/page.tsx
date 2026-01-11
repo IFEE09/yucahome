@@ -6,6 +6,7 @@ import HeroSlider from "@/components/HeroSlider";
 import SearchFilters from "@/components/SearchFilters";
 import SellerLeadPopup from "@/components/SellerLeadPopup";
 import OpenSellerFormBtn from "@/components/OpenSellerFormBtn";
+import CookieConsent from "@/components/CookieConsent";
 
 async function getProperties() {
   // In production, this would be an absolute URL
@@ -65,8 +66,8 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-xl md:text-2xl font-bold tracking-tighter text-secondary flex items-end mb-1">
-              <span className="font-handwritten text-4xl md:text-5xl normal-case mr-2 leading-none transform translate-y-1.5">Yuca</span>
-              <span className="font-playfair text-primary mb-0.5">HOME</span>
+              <span className="font-handwritten text-4xl md:text-5xl normal-case mr-2 leading-none transform translate-y-1.5">Mind</span>
+              <span className="font-playfair text-primary mb-0.5">HAUS</span>
             </span>
           </div>
 
@@ -75,9 +76,9 @@ export default async function Home() {
             <a href="/propiedades" className="hover:text-primary transition-colors">Propiedades</a>
             <a href="/zonas-vip" className="hover:text-primary transition-colors">Zonas VIP</a>
             <a href="/guia-inversion" className="hover:text-primary transition-colors">Guía de Inversión</a>
-            <OpenSellerFormBtn />
             <a href="/nosotros" className="hover:text-primary transition-colors">Nosotros</a>
             <a href="#noticias" className="hover:text-primary transition-colors">Consejos y Noticias</a>
+            <OpenSellerFormBtn />
           </div>
 
           <div className="flex items-center gap-4">
@@ -248,7 +249,7 @@ export default async function Home() {
             <div className="col-span-1 sm:col-span-2">
               <span className="text-2xl md:text-3xl font-bold tracking-tighter mb-6 block text-secondary">
                 <span className="flex items-end">
-                  <span className="font-handwritten text-6xl normal-case mr-3 leading-none transform translate-y-2.5">Yuca</span>
+                  <span className="font-handwritten text-6xl normal-case mr-3 leading-none transform translate-y-2.5">Mind</span>
                   <span className="font-playfair text-primary mb-1">HOME</span>
                 </span>
               </span>
@@ -266,14 +267,14 @@ export default async function Home() {
               <h4 className="font-bold mb-6 text-secondary uppercase text-[10px] md:text-xs tracking-widest">Contacto</h4>
               <ul className="space-y-4 text-sm text-white/50">
                 <li className="flex items-center gap-2">📍 Mérida, Yucatán</li>
-                <li className="flex items-center gap-2">✉️ contacto@yucahome.com</li>
+                <li className="flex items-center gap-2">✉️ contacto@mindhaus.com</li>
                 <li className="flex items-center gap-2">📞 +52 999 123 4567</li>
               </ul>
             </div>
           </div>
           <div className="mt-16 md:mt-24 pt-8 border-t border-white/5 text-center flex flex-col items-center gap-4">
             <p className="text-white/30 text-[10px] md:text-xs">
-              © 2026 YUCAHOME. Todos los derechos reservados.
+              © 2026 MINDHAUS. Todos los derechos reservados.
             </p>
             <a
               href="/login"
@@ -287,6 +288,7 @@ export default async function Home() {
 
       <WhatsAppButton />
       <SellerLeadPopup />
+      <CookieConsent />
     </main>
   );
 }

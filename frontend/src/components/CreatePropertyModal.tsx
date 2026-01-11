@@ -2,6 +2,38 @@
 
 import { useState, useRef } from 'react';
 
+const LOCATION_OPTIONS = [
+    "Norte",
+    "Centro",
+    "Oriente",
+    "Poniente",
+    "Sur",
+    "Playas",
+];
+
+const TYPE_OPTIONS = [
+    "Casa",
+    "Residencia de Lujo",
+    "Casa en Centro Histórico",
+    "Departamento / Loft",
+    "Terreno Residencial",
+    "Terreno para Inversión",
+    "Terrenos Industriales",
+    "Terreno Comercial",
+    "Oficina o Local Comercial",
+];
+
+const LIFESTYLE_OPTIONS = [
+    "Estilo Urbano / Ciudad",
+    "Estilo Residencial Familiar",
+    "Estilo Naturaleza / Verde",
+    "Estilo Playa / Costa",
+    "Estilo Inversión / Rentabilidad",
+    "Estilo Exclusivo / Premium",
+    "Estilo Práctico / Funcional",
+    "Estilo Retiro / Jubilados",
+];
+
 interface Props {
     isOpen: boolean;
     onClose: () => void;
@@ -143,17 +175,36 @@ export default function CreatePropertyModal({ isOpen, onClose, onSuccess }: Prop
                             </div>
                             <div>
                                 <label className="block text-[10px] md:text-xs uppercase font-bold text-textMuted mb-2 px-1">Ubicación</label>
-                                <input name="location" required placeholder="Ej: Zona Norte" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:border-primary outline-none transition-all focus:bg-white" />
+                                <div className="relative">
+                                    <select name="location" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:border-primary outline-none transition-all appearance-none focus:bg-white">
+                                        <option value="">Selecciona...</option>
+                                        {LOCATION_OPTIONS.map(opt => (
+                                            <option key={opt} value={opt}>{opt}</option>
+                                        ))}
+                                    </select>
+                                    <svg className="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                                </div>
+                            </div>
+                            <div>
+                                <label className="block text-[10px] md:text-xs uppercase font-bold text-textMuted mb-2 px-1">Estilo de Vida</label>
+                                <div className="relative">
+                                    <select name="lifestyle" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:border-primary outline-none transition-all appearance-none focus:bg-white">
+                                        <option value="">Selecciona...</option>
+                                        {LIFESTYLE_OPTIONS.map(opt => (
+                                            <option key={opt} value={opt}>{opt}</option>
+                                        ))}
+                                    </select>
+                                    <svg className="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                                </div>
                             </div>
                             <div>
                                 <label className="block text-[10px] md:text-xs uppercase font-bold text-textMuted mb-2 px-1">Tipo de Propiedad</label>
                                 <div className="relative">
                                     <select name="type" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3.5 text-sm focus:border-primary outline-none transition-all appearance-none focus:bg-white">
-                                        <option>Casa</option>
-                                        <option>Departamento</option>
-                                        <option>Terreno</option>
-                                        <option>Local Comercial</option>
-                                        <option>Hacienda</option>
+                                        <option value="">Selecciona...</option>
+                                        {TYPE_OPTIONS.map(opt => (
+                                            <option key={opt} value={opt}>{opt}</option>
+                                        ))}
                                     </select>
                                     <svg className="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                                 </div>
