@@ -250,7 +250,7 @@ export default async function Home() {
               <span className="text-2xl md:text-3xl font-bold tracking-tighter mb-6 block text-secondary">
                 <span className="flex items-end">
                   <span className="font-handwritten text-6xl normal-case mr-3 leading-none transform translate-y-2.5">Mind</span>
-                  <span className="font-playfair text-primary mb-1">HOME</span>
+                  <span className="font-playfair text-primary mb-1">HAUS</span>
                 </span>
               </span>
               <p className="text-white/40 max-w-sm mb-8 text-sm md:text-base leading-relaxed">
@@ -267,14 +267,14 @@ export default async function Home() {
               <h4 className="font-bold mb-6 text-secondary uppercase text-[10px] md:text-xs tracking-widest">Contacto</h4>
               <ul className="space-y-4 text-sm text-white/50">
                 <li className="flex items-center gap-2">📍 Mérida, Yucatán</li>
-                <li className="flex items-center gap-2">✉️ contacto@mindhaus.com</li>
+                <li className="flex items-center gap-2">✉️ contacto@mindhouse.com</li>
                 <li className="flex items-center gap-2">📞 +52 999 123 4567</li>
               </ul>
             </div>
           </div>
           <div className="mt-16 md:mt-24 pt-8 border-t border-white/5 text-center flex flex-col items-center gap-4">
             <p className="text-white/30 text-[10px] md:text-xs">
-              © 2026 MINDHOUSE. Todos los derechos reservados.
+              © 2026 MindHouse. Todos los derechos reservados.
             </p>
             <a
               href="/login"
