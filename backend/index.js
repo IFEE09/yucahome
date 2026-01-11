@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import sequelize from './config/database.js';
 import authRoutes from './routes/authRoutes.js';
 import dashboardRoutes from './routes/dashboardRoutes.js';
+import leadRoutes from './routes/leadRoutes.js';
 import { sanitizeInputs } from './middleware/sanitize.js';
 
 import path from 'path';
@@ -39,6 +40,7 @@ sequelize.sync({ alter: true }).then(() => {
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/dashboard', dashboardRoutes);
+app.use('/api/leads', leadRoutes);
 
 // Properties array (temporal placeholder)
 const properties = [];

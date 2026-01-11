@@ -5,6 +5,7 @@ import BlogCard from "@/components/BlogCard";
 import HeroSlider from "@/components/HeroSlider";
 import SearchFilters from "@/components/SearchFilters";
 import SellerLeadPopup from "@/components/SellerLeadPopup";
+import OpenSellerFormBtn from "@/components/OpenSellerFormBtn";
 
 async function getProperties() {
   // In production, this would be an absolute URL
@@ -74,6 +75,7 @@ export default async function Home() {
             <a href="/propiedades" className="hover:text-primary transition-colors">Propiedades</a>
             <a href="/zonas-vip" className="hover:text-primary transition-colors">Zonas VIP</a>
             <a href="/guia-inversion" className="hover:text-primary transition-colors">Guía de Inversión</a>
+            <OpenSellerFormBtn />
             <a href="/nosotros" className="hover:text-primary transition-colors">Nosotros</a>
             <a href="#noticias" className="hover:text-primary transition-colors">Consejos y Noticias</a>
           </div>

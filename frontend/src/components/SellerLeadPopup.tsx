@@ -17,17 +17,50 @@ export default function SellerLeadPopup() {
         const timer = setTimeout(() => {
             setIsVisible(true);
         }, 1500);
-        return () => clearTimeout(timer);
+
+        // Listen for custom open event
+        const handleOpen = () => {
+            setShowForm(true);
+        };
+        window.addEventListener("open-seller-modal", handleOpen);
+
+        return () => {
+            clearTimeout(timer);
+            window.removeEventListener("open-seller-modal", handleOpen);
+        };
     }, []);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Here you would typically send the data to your backend
-        console.log("Seller Lead Data:", formData);
-        alert("¡Gracias! Un asesor te contactará pronto.");
-        setShowForm(false);
-        setIsVisible(false);
+
+        if (!formData.name || !formData.surname || !formData.phone || !formData.email) {
+            alert("Por favor completa todos los campos obligatorios.");
+            return;
+        }
+
+        try {
+            const res = await fetch('http://localhost:4000/api/leads/seller', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            if (res.ok) {
+                alert("¡Gracias! Un asesor te contactará pronto.");
+                setShowForm(false);
+                setIsVisible(false);
+                setFormData({ name: "", surname: "", phone: "", email: "" });
+            } else {
+                const data = await res.json();
+                alert(data.message || "Error al enviar la información.");
+            }
+        } catch (error) {
+            console.error("Error submitting lead:", error);
+            alert("Error de conexión. Inténtalo de nuevo.");
+        }
     };
+
+
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormData({
@@ -78,7 +111,7 @@ export default function SellerLeadPopup() {
                 <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm animate-in fade-in duration-300">
                     <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden relative animate-in zoom-in-95 duration-300">
                         {/* Modal Header */}
-                        <div className="bg-secondary p-6 relative">
+                        <div className="bg-primary p-6 relative">
                             <button
                                 onClick={() => setShowForm(false)}
                                 className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors"
@@ -96,7 +129,7 @@ export default function SellerLeadPopup() {
                         <form onSubmit={handleSubmit} className="p-6 space-y-4">
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="space-y-1">
-                                    <label className="text-xs font-bold text-textMuted uppercase">Nombre</label>
+                                    <label className="text-xs font-bold text-textMuted uppercase">Nombre <span className="text-red-500">*</span></label>
                                     <input
                                         required
                                         type="text"
@@ -108,7 +141,7 @@ export default function SellerLeadPopup() {
                                     />
                                 </div>
                                 <div className="space-y-1">
-                                    <label className="text-xs font-bold text-textMuted uppercase">Apellido</label>
+                                    <label className="text-xs font-bold text-textMuted uppercase">Apellido <span className="text-red-500">*</span></label>
                                     <input
                                         required
                                         type="text"
@@ -122,7 +155,7 @@ export default function SellerLeadPopup() {
                             </div>
 
                             <div className="space-y-1">
-                                <label className="text-xs font-bold text-textMuted uppercase">WhatsApp</label>
+                                <label className="text-xs font-bold text-textMuted uppercase">WhatsApp <span className="text-red-500">*</span></label>
                                 <input
                                     required
                                     type="tel"
@@ -135,7 +168,7 @@ export default function SellerLeadPopup() {
                             </div>
 
                             <div className="space-y-1">
-                                <label className="text-xs font-bold text-textMuted uppercase">Correo Electrónico</label>
+                                <label className="text-xs font-bold text-textMuted uppercase">Correo Electrónico <span className="text-red-500">*</span></label>
                                 <input
                                     required
                                     type="email"
