@@ -54,7 +54,7 @@ export default function MaintenancePage() {
 
             {/* Footer discreto */}
             <p className="absolute bottom-8 text-textMuted/50 text-xs">
-                © 2026 MindHaus
+                © 2026 MindHouse
             </p>
         </div>
     );

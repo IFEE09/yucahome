@@ -274,7 +274,7 @@ export default async function Home() {
           </div>
           <div className="mt-16 md:mt-24 pt-8 border-t border-white/5 text-center flex flex-col items-center gap-4">
             <p className="text-white/30 text-[10px] md:text-xs">
-              © 2026 MINDHAUS. Todos los derechos reservados.
+              © 2026 MINDHOUSE. Todos los derechos reservados.
             </p>
             <a
               href="/login"

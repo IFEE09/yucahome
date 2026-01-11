@@ -19,7 +19,15 @@ export default function Dashboard() {
             return;
         }
 
-        setUser(JSON.parse(userData));
+        let parsedUser = JSON.parse(userData);
+
+        // Hotfix: Auto-update legacy branding in local session
+        if (parsedUser.name && parsedUser.name.includes('Yucahome')) {
+            parsedUser.name = parsedUser.name.replace('Yucahome', 'MindHaus');
+            localStorage.setItem('user', JSON.stringify(parsedUser));
+        }
+
+        setUser(parsedUser);
     }, [router]);
 
     if (!user) return null; // O un spinner de carga elegante
